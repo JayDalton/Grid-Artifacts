@@ -7,9 +7,10 @@ This project tries to implement *A new stationary gridline artifact suppression 
 Two given interfaces allowing Commandline based 
 
 ### Possible Technologies
-- C++ / WinRT based UWP Application for Windows 10
-- WPF based dialog description with coroutines
+
++ C++ / WinRT based UWP Application for Windows 10
++ WPF based dialog description with coroutines
 + Using Win2D for rendering images and charts 
-- Using DCMTK for reading and writing DICOM file format
++ Using DCMTK for reading and writing DICOM file format
 + Using OpenCV for manipulating complex image informations
-- applying given suppression methods 
++ applying given suppression methods 
