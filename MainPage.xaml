@@ -5,9 +5,23 @@
     xmlns:local="using:GridArtifacts"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" RequestedTheme="Dark">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
-    </StackPanel>
+    </StackPanel>-->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <CommandBar>
+            <AppBarButton Icon="OpenFile"  Label="Load file" Click="OpenBeatFile_Click"/>
+            <AppBarButton Icon="Refresh" Label="Refresh" Click="RefreshDeviceList_Click"/>
+        </CommandBar>
+        <Grid x:Name="RootGrid" Margin="12,20,12,12" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+    </Grid>
+
+
 </Page>

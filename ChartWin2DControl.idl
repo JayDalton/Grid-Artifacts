@@ -1,0 +1,9 @@
+namespace GridArtifacts
+{
+    [default_interface]
+    runtimeclass ChartWin2DControl : Windows.UI.Xaml.Controls.UserControl
+    {
+        ChartWin2DControl();
+        Int32 MyProperty;
+    }
+}

@@ -4,6 +4,9 @@
 
 namespace winrt::GridArtifacts::implementation
 {
+	using namespace winrt::Windows::Foundation;
+	using namespace winrt::Windows::UI::Xaml;
+
     struct MainPage : MainPageT<MainPage>
     {
         MainPage();
@@ -11,8 +14,10 @@ namespace winrt::GridArtifacts::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
-        void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
-    };
+        //void ClickHandler(IInspectable const& sender, RoutedEventArgs const& args);
+		IAsyncAction OpenBeatFile_Click(IInspectable const& sender, RoutedEventArgs const& e);
+		void RefreshDeviceList_Click(IInspectable const& sender, RoutedEventArgs const& e);
+	};
 }
 
 namespace winrt::GridArtifacts::factory_implementation
