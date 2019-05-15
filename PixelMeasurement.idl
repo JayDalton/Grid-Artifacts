@@ -1,0 +1,9 @@
+namespace GridArtifacts
+{
+    [bindable]
+    [default_interface]
+    runtimeclass PixelMeasurement 
+    {
+        PixelMeasurement();
+    }
+}

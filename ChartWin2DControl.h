@@ -47,6 +47,7 @@ namespace winrt::GridArtifacts::implementation
 
 		void DrawChart();
 		void DrawBackGround(Microsoft::Graphics::Canvas::CanvasDevice device, RenderingOptions options);
+		void DrawCharData(CanvasDevice device, RenderingOptions options, const PixelVector& data);
 
 		void DrawGraphValueLines(CanvasDrawingSession ds, float width, float height);
 		void DrawYAxisTexts(CanvasDrawingSession ds, float height, RenderingOptions options);

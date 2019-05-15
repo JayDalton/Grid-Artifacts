@@ -1,0 +1,10 @@
+namespace GridArtifacts
+{
+    [bindable]
+    [default_interface]
+    runtimeclass DicomImage 
+    {
+        DicomImage();
+		DicomImage(Windows.Storage.FileProperties.ImageProperties props, Windows.Storage.StorageFile imageFile, String name, String type);
+	}
+}

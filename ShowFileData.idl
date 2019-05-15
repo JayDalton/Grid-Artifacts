@@ -1,0 +1,9 @@
+namespace GridArtifacts
+{
+    [default_interface]
+    runtimeclass ShowFileData : Windows.UI.Xaml.Controls.Page
+    {
+        ShowFileData();
+        Int32 MyProperty;
+    }
+}

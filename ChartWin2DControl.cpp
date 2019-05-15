@@ -34,7 +34,6 @@ namespace winrt::GridArtifacts::implementation
 	void ChartWin2DControl::ChartWin2DCanvas_Draw(CanvasControl const& sender, CanvasDrawEventArgs const& args)
 	{
 		// in the start we don't have data, so we'll just draw the background rect with background color
-		//args.DrawingSession.DrawRectangle(0, 0, (float)ChartWin2DCanvas.Size.Width, (float)ChartWin2DCanvas.Size.Height, BACKGROUND_COLOR);
 		args.DrawingSession().DrawRectangle(0, 0, 
 			ChartWin2DCanvas().Size().Width, 
 			ChartWin2DCanvas().Size().Height, 
@@ -59,12 +58,12 @@ namespace winrt::GridArtifacts::implementation
 		auto device = CanvasDevice::GetSharedDevice();
 
 		//rendering options are calculating min & max values & value texts
-		RenderingOptions renderingOptions = CreateRenderingOptions(m_data);
+		auto renderingOptions = CreateRenderingOptions(m_data);
 
-		////_offscreenBackGround is created in here
+		//_offscreenBackGround is created in here
 		DrawBackGround(device, renderingOptions);
-		////_offscreenChartImage is created in here
-		//DrawCharData(device, renderingOptions, _data);
+		//_offscreenChartImage is created in here
+		DrawCharData(device, renderingOptions, m_data);
 
 		//forces re-draw
 		ChartWin2DCanvas().Invalidate();
@@ -130,6 +129,34 @@ namespace winrt::GridArtifacts::implementation
 			//draw value texts
 			DrawYAxisTexts(ds, useHeight, options);
 		}
+	}
+
+	void ChartWin2DControl::DrawCharData(CanvasDevice device, RenderingOptions options, const PixelVector& data)
+	{
+		//Size restrictions descriped in : http://microsoft.github.io/Win2D/html/P_Microsoft_Graphics_Canvas_CanvasDevice_MaximumBitmapSizeInPixels.htm 
+		float useHeight = (float)ChartWin2DCanvas().Size().Height > device.MaximumBitmapSizeInPixels() 
+			? device.MaximumBitmapSizeInPixels() : (float)ChartWin2DCanvas().Size().Height
+			;
+		float useWidth = data.size() > device.MaximumBitmapSizeInPixels() ? device.MaximumBitmapSizeInPixels() : data.size();
+
+		////this will change the values array to array with drawing-line-points for the graph
+		//List<DataPoint> dataList = FillOffsetList(data, options, useWidth, useHeight);
+
+		////reset zoom & moving values
+		//_zoomFactor = 100;
+		//_graphDrawingPoint = new Point(0, 0);
+		//_graphDrawingSource = new Size(useWidth, useHeight);
+		////create the graph image
+		//_offscreenChartImage = new CanvasRenderTarget(device, useWidth, useHeight, 96);
+
+		//if (CanvasDrawingSession ds = _offscreenChartImage.CreateDrawingSession())
+		//{
+		//	//This creates drawing geometry from the drawing-line-points
+		//	CanvasGeometry chart = getDrawChartGeometry(device, dataList);
+		//	//and then we simply draw it with defined color
+		//	ds.DrawGeometry(chart, 0, 0, GRAPG_COLOR);
+		//}
+
 	}
 
 	//Drawn the background horizontal lines

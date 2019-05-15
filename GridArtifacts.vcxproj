@@ -99,6 +99,10 @@
       <DependentUpon>ChartWin2DControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="DicomImage.h">
+      <DependentUpon>DicomImage.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -106,7 +110,15 @@
     <ClInclude Include="MainPage.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="PixelMeasurement.h">
+      <DependentUpon>PixelMeasurement.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="PixelValues.h" />
+    <ClInclude Include="ShowFileData.h">
+      <DependentUpon>ShowFileData.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -116,6 +128,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShowFileData.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -139,6 +154,10 @@
       <DependentUpon>ChartWin2DControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="DicomImage.cpp">
+      <DependentUpon>DicomImage.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -149,7 +168,15 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="PixelMeasurement.cpp">
+      <DependentUpon>PixelMeasurement.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="PixelValues.cpp" />
+    <ClCompile Include="ShowFileData.cpp">
+      <DependentUpon>ShowFileData.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl">
@@ -159,8 +186,18 @@
       <DependentUpon>ChartWin2DControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
+    <Midl Include="DicomImage.idl">
+      <SubType>Designer</SubType>
+    </Midl>
     <Midl Include="MainPage.idl">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="PixelMeasurement.idl">
+      <SubType>Designer</SubType>
+    </Midl>
+    <Midl Include="ShowFileData.idl">
+      <DependentUpon>ShowFileData.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Midl>
   </ItemGroup>
   <ItemGroup>

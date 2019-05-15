@@ -4,6 +4,6 @@ namespace GridArtifacts
     runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
     {
         MainPage();
-        Int32 MyProperty;
-    }
+		Windows.Foundation.Collections.IVector<IInspectable> Images{ get; };
+	}
 }
